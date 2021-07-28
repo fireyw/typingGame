@@ -17,7 +17,6 @@ function init() {
     buttonChange('loading')
     getWords();
     wordInput.addEventListener('input', checkMatch);
-
 }
 
 function getWords() {
@@ -45,6 +44,7 @@ function run() {
     timeInterval = setInterval(countDown, 1000);
     checkInterval = setInterval(checkStatus, 100)
     buttonChange('playing')
+    isPlaying=true;
 }
 
 function checkStatus() {
@@ -63,6 +63,7 @@ function checkMatch() {
         score++;
         scoreDisplay.innerText = score;
         const randomIndex = Math.floor(Math.random() * words.length);
+        console.log(randomIndex);
         wordDisplay.innerText = words[randomIndex];
     }
 }
